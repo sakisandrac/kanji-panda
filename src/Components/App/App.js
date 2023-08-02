@@ -3,9 +3,8 @@ import SavedKanji from '../SavedKanji/SavedKanji';
 import Nav from '../Nav/Nav';
 import { Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { getRandNum, getKanji, getSingleKanji } from '../../apiCalls';
-import { cleanUpData } from '../../utils';
-import SearchPage from '../SearchPage/SearchPage';
+import { getKanji, getSingleKanji } from '../../apiCalls';
+import { cleanUpData, getRandNum } from '../../utils';
 import './App.css';
 import ErrorMsg from '../ErrorMsg/ErrorMsg';
 
