@@ -4,13 +4,13 @@ import './KanjiSet.css'
 const KanjiSet = ({kanjiSet, changeMainKanji}) => {
 
   const renderKanjiSet = () => {
-    return kanjiSet.map(kanji => {
+    return kanjiSet?.map(kanji => {
       return (
         <div className='kanji-container' key={kanji._id} onClick={() => {changeMainKanji(kanji)}}>
-          <p className='kanj-set-char'>{kanji.ka_utf}</p>
-          <p className='kanji-text'>Meaning: {kanji.meaning}</p>
-          <p className='kanji-text'>Onyomi Pronounciation: {kanji.onyomi}</p>
-          <p className='kanji-text'>Kunyomi Pronounciation: {kanji.kunyomi}</p>
+          <p className='kanji-set-char'>{kanji.ka_utf}</p>
+          <p className='kanji-text'><b>Meaning:</b> <i>{kanji.meaning}</i></p>
+          {/* <p className='kanji-text'><b>Onyomi Pronounciation:</b> <i>{kanji.onyomi}</i></p> */}
+          {/* <p className='kanji-text'><b>Kunyomi Pronounciation:</b> <i>{kanji.kunyomi}</i></p> */}
         </div>
       )
     })
@@ -20,7 +20,7 @@ const KanjiSet = ({kanjiSet, changeMainKanji}) => {
     <section className='kanji-set-container'>
       <p className='set-header'>Random Kanji Set of the Day</p>
       <div className='kanji-set-box'>
-        {kanjiSet.length < 5 ? <p>Loading! </p> : renderKanjiSet()}
+        {renderKanjiSet()}
       </div>
     </section>
   )
