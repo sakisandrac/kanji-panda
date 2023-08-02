@@ -10,6 +10,7 @@ const Homepage = ({setGetNewSet, error, setKanjiSet, mainKanji, kanjiSet, change
     <div className='main-container'>
       <main className='dashboard'>
         <h1 className='header'>Let's Study Kanji!</h1>
+        <article className='info-home-box'>Click on a Kanji to see more details, and save!</article>
         {error.error && <ErrorMsg message={error.message} />}
         <RandomKanji saveKanji={saveKanji} mainKanji={mainKanji} savedKanji={savedKanji}/>
         <KanjiSet setGetNewSet={setGetNewSet} setKanjiSet={setKanjiSet} saveKanji={saveKanji}  kanjiSet={kanjiSet} changeMainKanji={changeMainKanji}/>
