@@ -7,7 +7,7 @@ const ErrorMsg = ({message}) => {
     if (message.includes("404")) {
       return (
         <main className='dashboard'>
-          <img src={notFoundImg} />
+          <img alt="404 not found" src={notFoundImg} />
         </main>
       )
     } else {

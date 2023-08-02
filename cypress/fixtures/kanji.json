@@ -1,0 +1,72 @@
+[
+  {
+    "_id": 1,
+    "ka_utf": "宝",
+    "meaning": "treasure",
+    "kunyomi": "takara",
+    "onyomi": "mo, bo"
+  },
+  {
+    "_id": 2,
+    "ka_utf": "模",
+    "meaning": "pattern, imitate, copy, model",
+    "kunyomi": "n/a",
+    "onyomi": "hou"
+  },
+  {
+    "_id": 3,
+    "ka_utf": "二",
+    "meaning": "two",
+    "kunyomi": "futa, futatsu, futari",
+    "onyomi": "ni"
+  },
+  {
+    "_id": 4,
+    "ka_utf": "白",
+    "meaning": "white",
+    "kunyomi": "shiro, shira, shiroi",
+    "onyomi": "haku, byaku"
+  },
+  {
+    "_id": 5,
+    "ka_utf": "競",
+    "meaning": "compete",
+    "kunyomi": "kisou, seru, kiso, se",
+    "onyomi": "kyou, kei"
+  },
+  {
+    "_id": 6,
+    "ka_utf": "八",
+    "meaning": "eight",
+    "kunyomi": "ya, you, yattsu",
+    "onyomi": "hachi"
+  },
+  {
+    "_id": 7,
+    "ka_utf": "輸",
+    "meaning": "transport",
+    "kunyomi": "n/a",
+    "onyomi": "yu"
+  },
+  {
+    "_id": 8,
+    "ka_utf": "塗",
+    "meaning": "apply on a surface, paint",
+    "kunyomi": "nu, nuru, nuri",
+    "onyomi": "to"
+  },
+  {
+    "_id": 9,
+    "ka_utf": "破",
+    "meaning": "break, tear",
+    "kunyomi": "yabu, yaburu, yabureru",
+    "onyomi": "ha"
+  },
+  {
+    "_id": 10,
+    "ka_utf": "刀",
+    "meaning": "sword",
+    "kunyomi": "katana",
+    "onyomi": "tou"
+  }
+]

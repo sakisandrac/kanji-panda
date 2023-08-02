@@ -1,5 +1,3 @@
-import { getRandNum, cleanUpData } from "./utils";
-
 const getKanji = async () => {
   const res = await fetch(`https://kanjialive-api.p.rapidapi.com/api/public/search/advanced/`, {
     method: 'GET',
