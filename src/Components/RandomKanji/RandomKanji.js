@@ -1,7 +1,7 @@
 import React from 'react';
 import './RandomKanji.css'
 
-const RandomKanji = ({mainKanji}) => {
+const RandomKanji = ({mainKanji, saveKanji, savedKanji}) => {
 
   return (
     <section className='main-kanji-container'>
@@ -12,6 +12,7 @@ const RandomKanji = ({mainKanji}) => {
           <p className='kanji-text'>Onyomi Pronounciation: {mainKanji?.onyomi}</p>
           <p className='mainKanji-text'>Kunyomi Pronounciation: {mainKanji?.kunyomi}</p>
         </div>
+        <button className='save-btn' onClick={() => {saveKanji(mainKanji)}}>{savedKanji?.some(k => k._id === mainKanji._id) ? "Unsave" : "Save"} Kanji</button>
       </div>
     </section>
   )
