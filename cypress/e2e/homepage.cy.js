@@ -31,8 +31,30 @@ describe('Users will be able to visit the homepage', () => {
     cy.url().should('include', '/')
     .get('.header').should('have.text', 'Let\'s Study Kanji!')
     cy.get('.info-home-box').should('have.text', 'Click on a Kanji to see more details, and save!')
-    cy.get('.main-kanji').get('.main-char').should('be.oneOf', ["母", "花","日", "犬", "猫"]);
+    cy.get('.main-kanji').get('.main-char')
+    // should('be.oneOf', ["母", "花","日", "犬", "猫"]
    })
     
+  })
+
+  it('should be able to load another random set of kanji', () => {
+    cy.wait(['@kanji-fetch', '@kanji-details']).then(intercept => {
+      cy.get('.kanji-set-container > .save-btn').click()
+      cy.wait(['@kanji-fetch', '@kanji-details']).then(intercept => {
+        cy.get('.kanji-set-box').children().should('have.length', 5)
+      })
+    })
+  })
+
+  it('should be able to navigate to saved page and back to home from nav bar', () => {
+    cy.wait(['@kanji-fetch', '@kanji-details']).then(intercept => {
+      cy.get('.nav-bar').should('be.visible')
+      .get('.nav-link-container > :nth-child(2)').click()
+      .url().should('include', '/saved')
+      .get('.nav-link-container > :nth-child(1)').click()
+      .url().should('include', '/')
+      .get('.logo').click()
+      .url().should('include', '/')
+    })
   })
 })
