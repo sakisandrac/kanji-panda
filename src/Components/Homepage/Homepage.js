@@ -5,7 +5,7 @@ import KanjiSet from '../KanjiSet/KanjiSet';
 import ErrorMsg from '../ErrorMsg/ErrorMsg';
 
 const Homepage = ({setGetNewSet, error, setKanjiSet, mainKanji, kanjiSet, changeMainKanji, saveKanji, savedKanji}) => {
-
+  
   return (
     <div className='main-container'>
       <main className='dashboard'>

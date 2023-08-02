@@ -8,7 +8,7 @@ const SavedKanji = ({saveKanji, savedKanji}) => {
   const renderSaved = () => {
     return savedKanji.map(k => {
       return (
-        <RandomKanji mainKanji={k} saveKanji={saveKanji} savedKanji={savedKanji} />
+        <RandomKanji key={k._id} mainKanji={k} saveKanji={saveKanji} savedKanji={savedKanji} />
       )
     })
   }

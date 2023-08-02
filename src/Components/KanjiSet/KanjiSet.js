@@ -21,7 +21,8 @@ const KanjiSet = ({setGetNewSet, kanjiSet, changeMainKanji, setKanjiSet}) => {
 
   return (
     <section className='kanji-set-container'>
-      <p className='set-header'>Random Kanji Set of the Day</p>
+      <p className='set-header'>Random Kanji Study Set</p>
+      {kanjiSet.length < 5 && <p className='loading-text'>loading...</p>}
       <div className='kanji-set-box'>
         {renderKanjiSet()}
       </div>
