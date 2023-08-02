@@ -1,6 +1,5 @@
 import React from 'react';
 import notFoundImg from '../../images/404.png';
-import PropTypes from 'prop-types';
 
 const ErrorMsg = ({message}) => {
 
@@ -18,14 +17,9 @@ const ErrorMsg = ({message}) => {
 
   return (
     <div className='error-page'> 
-      {message && renderMsg()}
+      {renderMsg()}
     </div>
   )
 }
 
-ErrorMsg.propTypes = {
-  message: PropTypes.string
-}
-
 export default ErrorMsg
-
