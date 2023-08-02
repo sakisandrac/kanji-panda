@@ -20,6 +20,10 @@
   padding: 0 10px;
 }
 
+.kanji-text {
+  font-size: 1.1rem;
+}
+
 .save-btn {
   border: none;
   border-radius: 10px;
