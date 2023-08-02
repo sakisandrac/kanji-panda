@@ -20,7 +20,7 @@ const KanjiSet = ({kanjiSet, changeMainKanji}) => {
     <section className='kanji-set-container'>
       <p className='set-header'>Random Kanji Set of the Day</p>
       <div className='kanji-set-box'>
-        {renderKanjiSet()}
+        {kanjiSet.length < 5 ? <p>Loading! </p> : renderKanjiSet()}
       </div>
     </section>
   )
