@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './Nav.css';
-import logo from './panda.png';
-import logoSmall from './panda1.png';
+import logo from '../../images/panda.png';
+import logoSmall from '../../images/panda1.png';
 import home from '../../images/home.png';
 import search from '../../images/search.png';
 import saved from '../../images/heart.png';
