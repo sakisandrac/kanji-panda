@@ -14,6 +14,7 @@ const App = () => {
   const [savedKanji, setSavedKanji] = useState([]);
   const [error, setError] = useState({ error: false, message: "" });
   const [studiedKanji, setStudiedKanji] = useState([]);
+  const [getNewSet, setGetNewSet] = useState(false);
 
   const getKanjiSet = async () => {
     const kData = await getKanji()
@@ -40,7 +41,7 @@ const App = () => {
         }
       })
     }).catch(err => setError({ error: true, message: `${err}` }))
-  }, [])
+  }, [getNewSet])
 
   const changeMainKanji = (kanji) => {
     setMainKanji(kanji);
@@ -78,6 +79,7 @@ const App = () => {
           saveKanji={saveKanji} 
           kanjiSet={kanjiSet} 
           mainKanji={mainKanji} 
+          setGetNewSet={setGetNewSet}
           changeMainKanji={changeMainKanji}/>} />
       <Route path="/saved" element={<SavedKanji studiedKanji={studiedKanji} setStudiedKanji={setStudiedKanji} savedKanji={savedKanji} saveKanji={saveKanji}/>}/>
       <Route path="*" element={<ErrorMsg message={"404"} />}/>

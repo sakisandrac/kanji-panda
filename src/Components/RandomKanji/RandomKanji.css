@@ -1,19 +1,50 @@
-.main-kanji-container {
-  display: flex;
-  justify-content: center;
-}
-
 .main-kanji {
-  border: 1px solid black;
+  box-shadow: 0 3px 6px 0 rgb(0 0 0 / 16%);
+  border-radius: 20px;
+  background-color: #9c9cac;
   width: 400px;
-  height: 400px;
   margin-top: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 10px;
 }
 
 .main-char {
-  font-size: 10rem;
+  font-size: 9rem;
   margin: 0;
+}
+
+.description {
+  text-align: center;
+  padding: 0 10px;
+}
+
+.kanji-text {
+  font-size: 1.1rem;
+}
+
+.save-btn {
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  width: 120px;
+  background-color:  #ebb1d2;
+  font-family: 'Noto Sans SC', sans-serif;
+}
+
+.save-btn:hover {
+  background-color: #fa8bca;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .main-kanji {
+    width: 300px;
+    height: 350px;
+  }
+
+  .main-char {
+    font-size: 5.5rem;
+  }
 }

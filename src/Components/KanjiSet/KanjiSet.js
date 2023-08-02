@@ -1,27 +1,32 @@
 import React from 'react';
 import './KanjiSet.css'
 
-const KanjiSet = ({kanjiSet, changeMainKanji}) => {
+const KanjiSet = ({setGetNewSet, kanjiSet, changeMainKanji, setKanjiSet}) => {
 
   const renderKanjiSet = () => {
-    return kanjiSet.map(kanji => {
+    return kanjiSet?.map(kanji => {
       return (
         <div className='kanji-container' key={kanji._id} onClick={() => {changeMainKanji(kanji)}}>
-          <p className='kanj-set-char'>{kanji.ka_utf}</p>
-          <p className='kanji-text'>Meaning: {kanji.meaning}</p>
-          <p className='kanji-text'>Onyomi Pronounciation: {kanji.onyomi}</p>
-          <p className='kanji-text'>Kunyomi Pronounciation: {kanji.kunyomi}</p>
+          <p className='kanji-set-char'>{kanji.ka_utf}</p>
+          <p className='kanji-text'><b>Meaning:</b> <i>{kanji.meaning}</i></p>
         </div>
       )
     })
   }
+  const handleClick = () => {
+    setKanjiSet([]);
+    setGetNewSet (prev=> !prev);
+  }
+
 
   return (
     <section className='kanji-set-container'>
-      <p className='set-header'>Random Kanji Set of the Day</p>
+      <p className='set-header'>Random Kanji Study Set</p>
+      {kanjiSet.length < 5 && <p className='loading-text'>loading...</p>}
       <div className='kanji-set-box'>
-        {kanjiSet.length < 5 ? <p>Loading! </p> : renderKanjiSet()}
+        {renderKanjiSet()}
       </div>
+      <button className='save-btn' onClick={handleClick}>Get Another Set!</button>
     </section>
   )
 }

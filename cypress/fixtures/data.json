@@ -1,0 +1,57 @@
+[
+  {
+  "kanji": {
+      "character": "s",
+      "stroke": 20
+  },
+  "radical": {
+      "character": "",
+      "stroke": 7,
+      "order": 183
+  }
+},
+{
+  "kanji": {
+      "character": "f",
+      "stroke": 20
+  },
+  "radical": {
+      "character": "",
+      "stroke": 7,
+      "order": 183
+  }
+},
+{
+  "kanji": {
+      "character": "g",
+      "stroke": 20
+  },
+  "radical": {
+      "character": "",
+      "stroke": 7,
+      "order": 183
+  }
+},
+{
+  "kanji": {
+      "character": "v",
+      "stroke": 20
+  },
+  "radical": {
+      "character": "",
+      "stroke": 7,
+      "order": 183
+  }
+},
+{
+  "kanji": {
+      "character": "b",
+      "stroke": 20
+  },
+  "radical": {
+      "character": "",
+      "stroke": 7,
+      "order": 183
+  }
+}
+]
