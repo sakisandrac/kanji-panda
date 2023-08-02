@@ -1,7 +1,7 @@
 import React from 'react';
 import './KanjiSet.css'
 
-const KanjiSet = ({kanjiSet, changeMainKanji, setKanjiSet}) => {
+const KanjiSet = ({setGetNewSet, kanjiSet, changeMainKanji, setKanjiSet}) => {
 
   const renderKanjiSet = () => {
     return kanjiSet?.map(kanji => {
@@ -15,6 +15,7 @@ const KanjiSet = ({kanjiSet, changeMainKanji, setKanjiSet}) => {
   }
   const handleClick = () => {
     setKanjiSet([]);
+    setGetNewSet (prev=> !prev);
   }
 
 

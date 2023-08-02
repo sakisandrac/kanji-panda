@@ -4,7 +4,7 @@ import './Homepage.css'
 import KanjiSet from '../KanjiSet/KanjiSet';
 import ErrorMsg from '../ErrorMsg/ErrorMsg';
 
-const Homepage = ({error, setKanjiSet, mainKanji, kanjiSet, changeMainKanji, saveKanji, savedKanji}) => {
+const Homepage = ({setGetNewSet, error, setKanjiSet, mainKanji, kanjiSet, changeMainKanji, saveKanji, savedKanji}) => {
 
   return (
     <div className='main-container'>
@@ -12,7 +12,7 @@ const Homepage = ({error, setKanjiSet, mainKanji, kanjiSet, changeMainKanji, sav
         <h1 className='header'>Let's Study Kanji!</h1>
         {error.error && <ErrorMsg message={error.message} />}
         <RandomKanji saveKanji={saveKanji} mainKanji={mainKanji} savedKanji={savedKanji}/>
-        <KanjiSet setKanjiSet={setKanjiSet} saveKanji={saveKanji}  kanjiSet={kanjiSet} changeMainKanji={changeMainKanji}/>
+        <KanjiSet setGetNewSet={setGetNewSet} setKanjiSet={setKanjiSet} saveKanji={saveKanji}  kanjiSet={kanjiSet} changeMainKanji={changeMainKanji}/>
       </main>
     </div>
   )
