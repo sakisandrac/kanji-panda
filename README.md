@@ -18,6 +18,7 @@ The biggest challenge about this project was the "my saved kanji" page. This pag
 ![preview](https://github.com/sakisandrac/kanji-panda/assets/118419729/7dc16a8d-5592-41a3-8d5a-f6fa3611afda)
 
 ## Set up
+(NOTE: to run this project locally,<a href="https://rapidapi.com/KanjiAlive/api/learn-to-read-and-write-japanese-kanji"> you will need an api key from kanji alive</a>)
 1. Fork or clone down this respository. 
 2. In the terminal, open this app by running the command `cd <project folder name>`
 3. Run the command  `npm install` to install dependencies.
