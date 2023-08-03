@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+# Kanji Panda - A Japanese Kanji Study Companion
+Unleash the power of kanji with this captivating study companion! Upon page load, users are greeted with 5 random characters. Dive into pronunciation and meanings at a tap, and save the ones you love to study. Streamline your progress by organizing learned kanji separately. Plus, easily search by English meaning or character to fuel your language journey. Your path to kanji mastery starts here! 
+Try this app <a href="https://kanji-panda.vercel.app/">here</a>!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Technologies Used
+React, PropTypes, React router v6, create-react-app, CSS, HTML, JavaScript, Cypress
 
-## Available Scripts
+## Contributors:
+<a href="https://github.com/sakisandrac">Saki Chatphatthanasiri</a><br>
 
-In the project directory, you can run:
+## Learning Goals:
+At the time of this project, I am a student at Turing School of Software Engineering in the front end development program, in mod 3. This project was created for the final solo project- we have now been learning React and this project was a way to showcase all the knowlege gained from practicing React. 
 
-### `npm start`
+## Challenges:
+The biggest challenge about this project was the "my saved kanji" page. This page allows users to filter through their saved kanji by viewing all saved, kanji yet to be studied, and kanji already learned. Having the components re-render and stay in sync with each other was a challenge as there were serveral different states to keep track of.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Project Preview
+![preview](https://github.com/sakisandrac/kanji-panda/assets/118419729/7dc16a8d-5592-41a3-8d5a-f6fa3611afda)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Set up
+1. Fork or clone down this respository. 
+2. In the terminal, open this app by running the command `cd <project folder name>`
+3. Run the command  `npm install` to install dependencies.
+4. Run the command `npm start` to start the server.
+5. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+6. You can also view the project <a href="https://kanji-panda.vercel.app/">here</a>.
+7. Use control C to stop the server.
