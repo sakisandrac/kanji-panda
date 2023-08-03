@@ -1,5 +1,6 @@
 import React from 'react';
-import './KanjiSet.css'
+import './KanjiSet.css';
+import PropTypes from 'prop-types';
 
 const KanjiSet = ({setGetNewSet, kanjiSet, changeMainKanji, setKanjiSet}) => {
 
@@ -29,6 +30,19 @@ const KanjiSet = ({setGetNewSet, kanjiSet, changeMainKanji, setKanjiSet}) => {
       <button className='save-btn' onClick={handleClick}>Get Another Set!</button>
     </section>
   )
+}
+
+KanjiSet.propTypes = {
+  setGetNewSet: PropTypes.func,
+  kanjiSet: PropTypes.arrayOf(PropTypes.shape({
+    ka_utf: PropTypes.string,
+    kunyomi: PropTypes.string,
+    meaning: PropTypes.string,
+    onyomi: PropTypes.string,
+    _id: PropTypes.string,
+  })),
+  changeMainKanji: PropTypes.func,
+  setKanjiSet: PropTypes.func
 }
 
 export default KanjiSet

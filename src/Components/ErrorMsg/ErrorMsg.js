@@ -1,5 +1,6 @@
 import React from 'react';
 import notFoundImg from '../../images/404.png';
+import PropTypes from 'prop-types';
 
 const ErrorMsg = ({message}) => {
 
@@ -23,3 +24,7 @@ const ErrorMsg = ({message}) => {
 }
 
 export default ErrorMsg
+
+ErrorMsg.propTypes = {
+  message: PropTypes.string
+}

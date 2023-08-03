@@ -78,7 +78,7 @@ const App = () => {
           savedKanji={savedKanji} 
           saveKanji={saveKanji} 
           kanjiSet={kanjiSet} 
-          mainKanji={mainKanji} 
+          mainKanji={mainKanji}
           setGetNewSet={setGetNewSet}
           changeMainKanji={changeMainKanji}/>} />
       <Route path="/saved" element={<SavedKanji studiedKanji={studiedKanji} setStudiedKanji={setStudiedKanji} savedKanji={savedKanji} saveKanji={saveKanji}/>}/>
