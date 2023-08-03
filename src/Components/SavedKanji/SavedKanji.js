@@ -2,6 +2,7 @@ import React from 'react';
 import RandomKanji from '../RandomKanji/RandomKanji';
 import './SavedKanji.css';
 import ErrorMsg from '../ErrorMsg/ErrorMsg';
+import PropTypes from 'prop-types';
 
 const SavedKanji = ({saveKanji, savedKanji}) => {
 
@@ -23,6 +24,18 @@ const SavedKanji = ({saveKanji, savedKanji}) => {
       </main>
     </div>
   )
+}
+
+RandomKanji.propTypes = {
+  saveKanji: PropTypes.func,
+  savedKanji: PropTypes.arrayOf(PropTypes.shape({
+    ka_utf: PropTypes.string,
+    kunyomi: PropTypes.string,
+    meaning: PropTypes.string,
+    onyomi: PropTypes.string,
+    _id: PropTypes.string,
+    studied: PropTypes.bool
+  }))
 }
 
 export default SavedKanji
