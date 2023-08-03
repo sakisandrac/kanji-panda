@@ -8,7 +8,6 @@ const getKanji = async () => {
   });
 
   if(!res.ok) {
-    console.log('this is the error', res.statusText);
     throw new Error(`${res.statusText} - Please Try Again`);
   };
 
@@ -26,7 +25,6 @@ const getSingleKanji = async (type, char) => {
   })
 
   if(!res.ok) {
-    console.log(res.statusText);
     throw new Error(`${res.statusText} - Please Try Again`);
   };
 
