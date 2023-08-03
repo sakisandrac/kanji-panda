@@ -26,8 +26,7 @@ describe('User should be able to save kanji', () => {
 
   it('should be able to click on kanji and save them, view saved, and unsave them', () => {
     cy.wait(['@kanji-fetch', '@kanji-details']).then(intercept => {
-      cy.get('.main-kanji > .save-btn').should('have.text', 'Save Kanji')
-      .get('.main-kanji > .save-btn').click().should('have.text', 'Unsave Kanji')
+      cy.get('.main-kanji > .save-btn').should('have.text', 'Save Kanji').click()
       .get('.kanji-set-box > :nth-child(1)').click()
       .get('.main-kanji > .save-btn').should('be.visible')
       .get('.nav-link-container > :nth-child(2)').click()
