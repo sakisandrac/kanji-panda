@@ -5,6 +5,7 @@ import logo from '../../images/panda.png';
 import logoSmall from '../../images/panda1.png';
 import home from '../../images/home.png';
 import saved from '../../images/heart.png';
+import search from '../../images/search.png';
 
 const Nav = () => {
   return (
@@ -17,8 +18,10 @@ const Nav = () => {
       <div className="nav-link-container">
         <NavLink className="nav-link text" to="/" aria-label="link to homepage">Home</NavLink>
         <NavLink className="nav-link text" to="/saved" aria-label="link to saved kanji page">My Saved Kanji</NavLink>
+        <NavLink className="nav-link text" to="/search" aria-label="link to search page">Search</NavLink>
         <Link className="nav-link icon" to="/" aria-label="link to homepage"><img className='nav-icon' src={home} alt='home icon'/></Link>
         <Link className="nav-link icon" to="/saved" aria-label="link to saved kanji page"><img className='nav-icon' src={saved} alt='saved page icon'/></Link>
+        <Link className="nav-link icon" to="/search" aria-label="link to search page"><img className='nav-icon' src={search} alt='search icon'/></Link>
       </div>
     </nav>
   )
