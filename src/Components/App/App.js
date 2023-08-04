@@ -32,6 +32,7 @@ const App = () => {
   }
 
   useEffect(() => {
+
     getKanjiSet().then(set => {
       set.forEach(k => {
         try {

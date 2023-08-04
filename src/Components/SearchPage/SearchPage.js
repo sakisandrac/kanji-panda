@@ -10,7 +10,7 @@ const SearchPage = ({saveKanji, savedKanji}) => {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResult, setSearchResult] = useState([]);
   const [searchType, setSearchType] = useState("");
-  const [error, setError] = useState({error: false, message:""});
+  const [error, setError] = useState({error: false, fetchError: false, message:""});
   const [reRender, setReRender] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -23,18 +23,23 @@ const SearchPage = ({saveKanji, savedKanji}) => {
       .then(data => {
         setError({error: false, message:""})
         const cleanData = cleanUpData(data);
+
+        console.log('dataaaa', data)
         if(data.error === "No kanji found." || data.length === 0) {
+          console.log('yooooo')
           return setSearchResult([{error: true, message:"No kanji found."}])
         }
 
         if (searchType === 'search') {
+          console.log('helloooooooo', data)
           data?.forEach((k) => {
             getSingleKanji('kanji', k.kanji.character).then(data => {
+              console.log('hello??')
               setError({error: false, message:""})
               setSearchResult(prev => [...prev, data]);
             })
             .catch(err => {
-              setError({error: true, message: err});
+              setError({error: true, fetchError: true, message:  err});
             });
           })
         } else {
@@ -42,13 +47,15 @@ const SearchPage = ({saveKanji, savedKanji}) => {
         }
       })
       .catch(err => {
-        setError({error: true, message: err})
+        console.log('ERRORRR', err)
+        setError({error: true, fetchError: true, message: `${err}`})
       })
     }
   }, [reRender])
 
   const setSearch =(e) => {
     const {name, value} = e.target;
+    console.log(name,)
     name === 'select' ? setSearchType(value) : setSearchTerm(value);
   }
 
@@ -103,6 +110,7 @@ const SearchPage = ({saveKanji, savedKanji}) => {
         </form>
         <div className='search-results-container'>
           <section className='search-results'>
+            {error.fetchError && <ErrorMsg message={error.message}/>}
             {isSubmitted ? 
               searchResult.length > 0? 
                 renderResults() : <ErrorMsg message={"loading..."}/>
