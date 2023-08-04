@@ -1,7 +1,7 @@
 .main-kanji {
-  box-shadow: 0 3px 6px 0 rgb(0 0 0 / 16%);
+  box-shadow: 0 3px 6px 0 rgb(0 0 0 / 40%);
   border-radius: 20px;
-  background-color: #9c9cac;
+  background-color: rgb(255, 251, 251);
   width: 400px;
   margin-top: 30px;
   display: flex;

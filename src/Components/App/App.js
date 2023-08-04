@@ -1,6 +1,7 @@
 import Homepage from '../Homepage/Homepage';
 import SavedKanji from '../SavedKanji/SavedKanji';
 import Nav from '../Nav/Nav';
+import SearchPage from '../SearchPage/SearchPage';
 import { Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getKanji, getSingleKanji } from '../../apiCalls';
@@ -13,7 +14,6 @@ const App = () => {
   const [kanjiSet, setKanjiSet] = useState([]);
   const [savedKanji, setSavedKanji] = useState([]);
   const [error, setError] = useState({ error: false, message: "" });
-  const [studiedKanji, setStudiedKanji] = useState([]);
   const [getNewSet, setGetNewSet] = useState(false);
 
   const getKanjiSet = async () => {
@@ -32,6 +32,7 @@ const App = () => {
   }
 
   useEffect(() => {
+
     getKanjiSet().then(set => {
       set.forEach(k => {
         try {
@@ -52,15 +53,19 @@ const App = () => {
       return saved._id === kanji._id;
     })
 
-    const kanjiData = {...kanji, studied: false}
     if (!isSaved) {
-      setSavedKanji(prev => [...prev, kanjiData]);
+      setSavedKanji(prev => [...prev, kanji]);
     } else {
       setSavedKanji(() => {
         const filteredKanji = savedKanji.filter(k => k._id !== kanji._id);
         return filteredKanji;
       })
     }
+  }
+
+  const handleNewSetClick = () => {
+    setKanjiSet([]);
+    setGetNewSet (prev=> !prev);
   }
 
   return (
@@ -71,17 +76,15 @@ const App = () => {
     <Routes>
       <Route path="/" element={
         <Homepage
-          studiedKanji={studiedKanji} 
-          setStudiedKanji={setStudiedKanji}
           error={error}
-          setKanjiSet={setKanjiSet} 
+          handleNewSetClick={handleNewSetClick}
           savedKanji={savedKanji} 
           saveKanji={saveKanji} 
           kanjiSet={kanjiSet} 
           mainKanji={mainKanji}
-          setGetNewSet={setGetNewSet}
           changeMainKanji={changeMainKanji}/>} />
-      <Route path="/saved" element={<SavedKanji studiedKanji={studiedKanji} setStudiedKanji={setStudiedKanji} savedKanji={savedKanji} saveKanji={saveKanji}/>}/>
+      <Route path="/saved" element={<SavedKanji savedKanji={savedKanji} saveKanji={saveKanji}/>}/>
+      <Route path="/search" element={<SearchPage saveKanji={saveKanji} savedKanji={savedKanji}/>}/>
       <Route path="*" element={<ErrorMsg message={"404"} />}/>
     </Routes>
   </>

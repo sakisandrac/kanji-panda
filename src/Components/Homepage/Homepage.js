@@ -5,7 +5,7 @@ import KanjiSet from '../KanjiSet/KanjiSet';
 import ErrorMsg from '../ErrorMsg/ErrorMsg';
 import PropTypes from 'prop-types';
 
-const Homepage = ({setGetNewSet, error, setKanjiSet, mainKanji, kanjiSet, changeMainKanji, saveKanji, savedKanji}) => {
+const Homepage = ({error, handleNewSetClick, mainKanji, kanjiSet, changeMainKanji, saveKanji, savedKanji}) => {
   
   return (
     <div className='main-container'>
@@ -14,7 +14,7 @@ const Homepage = ({setGetNewSet, error, setKanjiSet, mainKanji, kanjiSet, change
         <article className='info-home-box'>Click on a Kanji to see more details, and save!</article>
         {error.error && <ErrorMsg message={error.message} />}
         <RandomKanji saveKanji={saveKanji} mainKanji={mainKanji} savedKanji={savedKanji}/>
-        <KanjiSet setGetNewSet={setGetNewSet} setKanjiSet={setKanjiSet} saveKanji={saveKanji}  kanjiSet={kanjiSet} changeMainKanji={changeMainKanji}/>
+        <KanjiSet handleNewSetClick={handleNewSetClick} saveKanji={saveKanji}  kanjiSet={kanjiSet} changeMainKanji={changeMainKanji}/>
       </main>
     </div>
   )
@@ -22,21 +22,11 @@ const Homepage = ({setGetNewSet, error, setKanjiSet, mainKanji, kanjiSet, change
 
 
 Homepage.propTypes = {
-  setGetNewSet: PropTypes.func,
-  studiedKanji: PropTypes.arrayOf(PropTypes.shape({
-    ka_utf: PropTypes.string,
-    kunyomi: PropTypes.string,
-    meaning: PropTypes.string,
-    onyomi: PropTypes.string,
-    _id: PropTypes.string,
-    studied: PropTypes.bool
-  })),
-  setStudiedKanji: PropTypes.func,
   error: PropTypes.shape({
     error: PropTypes.bool,
     message: PropTypes.string
   }),
-  setKanjiSet: PropTypes.func,
+  handleNewSetClick: PropTypes.func,
   mainKanji: PropTypes.shape({
     ka_utf: PropTypes.string,
     kunyomi: PropTypes.string,
@@ -59,7 +49,6 @@ Homepage.propTypes = {
     meaning: PropTypes.string,
     onyomi: PropTypes.string,
     _id: PropTypes.string,
-    studied: PropTypes.bool
   }))
 }
 
