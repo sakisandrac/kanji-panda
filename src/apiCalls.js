@@ -12,7 +12,6 @@ const getKanji = async () => {
   };
 
   const data = await res.json();
-  console.log('first', data)
   return data;
 }
 
@@ -30,7 +29,6 @@ const getSingleKanji = async (type, char) => {
   };
 
   const data = await res.json();
-  console.log('second', data)
   return data;
 }
 

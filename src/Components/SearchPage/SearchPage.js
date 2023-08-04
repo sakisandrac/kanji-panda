@@ -4,58 +4,53 @@ import { cleanUpData } from '../../utils';
 import RandomKanji from '../RandomKanji/RandomKanji';
 import './SearchPage.css';
 import ErrorMsg from '../ErrorMsg/ErrorMsg';
+import PropTypes from 'prop-types';
 
-const SearchPage = ({saveKanji, savedKanji}) => {
+const SearchPage = ({ saveKanji, savedKanji }) => {
 
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResult, setSearchResult] = useState([]);
   const [searchType, setSearchType] = useState("");
-  const [error, setError] = useState({error: false, fetchError: false, message:""});
+  const [error, setError] = useState({ error: false, fetchError: false, message: "" });
   const [reRender, setReRender] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   useEffect(() => {
 
-    if(searchTerm) {
+    if (searchTerm) {
       setSearchResult([]);
-      setError({error: false, message: ""})
-      getSingleKanji(searchType, searchTerm)
-      .then(data => {
-        setError({error: false, message:""})
-        const cleanData = cleanUpData(data);
+      setError({ error: false, message: "" })
+      getSingleKanji(searchType, searchTerm.toLowerCase())
+        .then(data => {
+          setError({ error: false, message: "" })
+          const cleanData = cleanUpData(data);
 
-        console.log('dataaaa', data)
-        if(data.error === "No kanji found." || data.length === 0) {
-          console.log('yooooo')
-          return setSearchResult([{error: true, message:"No kanji found."}])
-        }
+          if (data.error === "No kanji found." || data.length === 0) {
+            return setSearchResult([{ error: true, message: "No kanji found." }])
+          }
 
-        if (searchType === 'search') {
-          console.log('helloooooooo', data)
-          data?.forEach((k) => {
-            getSingleKanji('kanji', k.kanji.character).then(data => {
-              console.log('hello??')
-              setError({error: false, message:""})
-              setSearchResult(prev => [...prev, data]);
+          if (searchType === 'search') {
+            data?.forEach((k) => {
+              getSingleKanji('kanji', k.kanji.character).then(data => {
+                setError({ error: false, message: "" })
+                setSearchResult(prev => [...prev, data]);
+              })
+                .catch(err => {
+                  setError({ error: true, fetchError: true, message: err });
+                });
             })
-            .catch(err => {
-              setError({error: true, fetchError: true, message:  err});
-            });
-          })
-        } else {
-        setSearchResult([cleanData]);
-        }
-      })
-      .catch(err => {
-        console.log('ERRORRR', err)
-        setError({error: true, fetchError: true, message: `${err}`})
-      })
+          } else {
+            setSearchResult([cleanData]);
+          }
+        })
+        .catch(err => {
+          setError({ error: true, fetchError: true, message: `${err}` })
+        })
     }
   }, [reRender])
 
-  const setSearch =(e) => {
-    const {name, value} = e.target;
-    console.log(name,)
+  const setSearch = (e) => {
+    const { name, value } = e.target;
     name === 'select' ? setSearchType(value) : setSearchTerm(value);
   }
 
@@ -75,7 +70,7 @@ const SearchPage = ({saveKanji, savedKanji}) => {
     e.preventDefault();
 
     if (searchTerm) {
-     runSearch();
+      runSearch();
     } else {
       setIsSubmitted(false);
       setError({ error: true, message: "search cannot be blank!" })
@@ -83,10 +78,10 @@ const SearchPage = ({saveKanji, savedKanji}) => {
   }
 
   const renderResults = () => {
-    if(searchResult[0].error) {
-      return <ErrorMsg message={"no results found"}/>
+    if (searchResult[0].error) {
+      return <ErrorMsg message={"no results found"} />
     } else {
-      return searchResult.map(kanji => <RandomKanji key={kanji._id} mainKanji={kanji}  saveKanji={saveKanji} savedKanji={savedKanji}/>)
+      return searchResult.map(kanji => <RandomKanji key={kanji._id} mainKanji={kanji} saveKanji={saveKanji} savedKanji={savedKanji} />)
     }
   }
 
@@ -105,16 +100,16 @@ const SearchPage = ({saveKanji, savedKanji}) => {
             <option value='kanji'>Kanji Character</option>
           </select>
           <label className='hidden' htmlFor='searchText'>Search</label>
-          <input id='searchText' className='search-text' name='input' type='text' value={searchTerm} onChange={(e) => { setSearch(e) }} placeholder='enter kanji' />
+          <input id='searchText' className='search-text' name='input' type='text' value={searchTerm} onChange={(e) => { setSearch(e) }} placeholder='enter search' />
           <button className='save-btn search-btn' onClick={(e) => { submitSearch(e) }}>search</button>
         </form>
         <div className='search-results-container'>
           <section className='search-results'>
-            {error.fetchError && <ErrorMsg message={error.message}/>}
-            {isSubmitted ? 
-              searchResult.length > 0? 
-                renderResults() : <ErrorMsg message={"loading..."}/>
-              : <ErrorMsg message={error.message}/>
+            {error.fetchError && <ErrorMsg message={error.message} />}
+            {isSubmitted ?
+              searchResult.length > 0 ?
+                renderResults() : <ErrorMsg message={"loading..."} />
+              : <ErrorMsg message={error.message} />
             }
           </section>
         </div>
@@ -122,5 +117,18 @@ const SearchPage = ({saveKanji, savedKanji}) => {
     </div>
   )
 }
+
+SearchPage.propTypes = {
+  saveKanji: PropTypes.func,
+  savedKanji: PropTypes.arrayOf(PropTypes.shape({
+    ka_utf: PropTypes.string,
+    kunyomi: PropTypes.string,
+    meaning: PropTypes.string,
+    onyomi: PropTypes.string,
+    _id: PropTypes.string,
+    studied: PropTypes.bool
+  }))
+}
+
 
 export default SearchPage

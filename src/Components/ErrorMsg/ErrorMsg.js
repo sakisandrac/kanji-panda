@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 const ErrorMsg = ({message}) => {
 
   const renderMsg = () => {
-    console.log('mesasge', message)
     if (message.includes("404")) {
       return (
         <main className='dashboard'>
