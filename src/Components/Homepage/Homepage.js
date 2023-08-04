@@ -23,15 +23,6 @@ const Homepage = ({setGetNewSet, error, setKanjiSet, mainKanji, kanjiSet, change
 
 Homepage.propTypes = {
   setGetNewSet: PropTypes.func,
-  studiedKanji: PropTypes.arrayOf(PropTypes.shape({
-    ka_utf: PropTypes.string,
-    kunyomi: PropTypes.string,
-    meaning: PropTypes.string,
-    onyomi: PropTypes.string,
-    _id: PropTypes.string,
-    studied: PropTypes.bool
-  })),
-  setStudiedKanji: PropTypes.func,
   error: PropTypes.shape({
     error: PropTypes.bool,
     message: PropTypes.string
@@ -59,7 +50,6 @@ Homepage.propTypes = {
     meaning: PropTypes.string,
     onyomi: PropTypes.string,
     _id: PropTypes.string,
-    studied: PropTypes.bool
   }))
 }
 
