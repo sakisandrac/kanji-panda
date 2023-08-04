@@ -1,9 +1,12 @@
 # Kanji Panda - A Japanese Kanji Study Companion
-Unleash the power of kanji with this captivating study companion! Upon page load, users are greeted with 5 random characters. Dive into pronunciation and meanings at a tap, and save the ones you love to study. Streamline your progress by organizing learned kanji separately. Plus, easily search by English meaning or character to fuel your language journey. Your path to kanji mastery starts here! 
+Unleash the power of kanji with this captivating study companion! Upon page load, users are greeted with 5 random characters. Dive into pronunciation and meanings at a tap, and save the ones you love to study. Plus, easily search by English meaning or character to fuel your language journey. Your path to kanji mastery starts here! 
 Try this app <a href="https://kanji-panda.vercel.app/">here</a>!
 
 ## Technologies Used
 React, PropTypes, React router v6, create-react-app, CSS, HTML, JavaScript, Cypress
+
+## Why I Built This App:
+As someone whose family are first-generation immigrants, learning languages holds a special place in my heart. It's a way to connect with cultures worldwide and learning my own family’s language helped me connect with my heritage and background. I genuinely hope this application can be a valuable tool for others who share the same passion for language learning and aid them in mastering the Japanese language.
 
 ## Contributors:
 <a href="https://github.com/sakisandrac">Saki Chatphatthanasiri</a><br>
