@@ -61,7 +61,7 @@ describe('User should see error messages on search page', () => {
       "https://kanjialive-api.p.rapidapi.com/api/public/search/rain",
       {
         statusCode: 500,
-        body: { "message": "endpoint not found" }
+        body: { "message": "internal server error" }
       }
     ).as("kanji-fail");
     cy.visit('http://localhost:3000/search')
