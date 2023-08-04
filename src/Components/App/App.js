@@ -63,6 +63,11 @@ const App = () => {
     }
   }
 
+  const handleNewSetClick = () => {
+    setKanjiSet([]);
+    setGetNewSet (prev=> !prev);
+  }
+
   return (
     <>
     <div className="App">
@@ -72,12 +77,11 @@ const App = () => {
       <Route path="/" element={
         <Homepage
           error={error}
-          setKanjiSet={setKanjiSet} 
+          handleNewSetClick={handleNewSetClick}
           savedKanji={savedKanji} 
           saveKanji={saveKanji} 
           kanjiSet={kanjiSet} 
           mainKanji={mainKanji}
-          setGetNewSet={setGetNewSet}
           changeMainKanji={changeMainKanji}/>} />
       <Route path="/saved" element={<SavedKanji savedKanji={savedKanji} saveKanji={saveKanji}/>}/>
       <Route path="/search" element={<SearchPage saveKanji={saveKanji} savedKanji={savedKanji}/>}/>
