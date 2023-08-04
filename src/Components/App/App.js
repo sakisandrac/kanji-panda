@@ -1,6 +1,7 @@
 import Homepage from '../Homepage/Homepage';
 import SavedKanji from '../SavedKanji/SavedKanji';
 import Nav from '../Nav/Nav';
+import SearchPage from '../SearchPage/SearchPage';
 import { Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { getKanji, getSingleKanji } from '../../apiCalls';
@@ -78,6 +79,7 @@ const App = () => {
           setGetNewSet={setGetNewSet}
           changeMainKanji={changeMainKanji}/>} />
       <Route path="/saved" element={<SavedKanji savedKanji={savedKanji} saveKanji={saveKanji}/>}/>
+      <Route path="/search" element={<SearchPage saveKanji={saveKanji} savedKanji={savedKanji}/>}/>
       <Route path="*" element={<ErrorMsg message={"404"} />}/>
     </Routes>
   </>
